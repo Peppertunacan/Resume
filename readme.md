@@ -19,11 +19,11 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│  ⚡ 실시간 시스템 개발 (SSE, MQTT)                               │
-│  🎨 프론트엔드 개발 (Next.js, React, Vue, React Native)        │
-│  🤖 IoT/임베디드 (RFID, MQTT, Raspberry Pi)                   │
-│  📊 데이터 파이프라인 (Airflow, Kafka, Flink)                   │
-│  ☁️ 컨테이너 기술 (Docker)                                     │
+│  ⚡ 실시간 시스템 개발 (SSE, MQTT)                           │
+│  🎨 프론트엔드 개발 (Next.js, React, Vue, React Native)      │
+│  🤖 IoT/임베디드 (RFID, MQTT, Raspberry Pi)                 │
+│  📊 데이터 파이프라인 (Airflow, Kafka, Flink)                │
+│  ☁️ 컨테이너 기술 (Docker)                                   │
 └─────────────────────────────────────────────────────────────┘
 ```
 
