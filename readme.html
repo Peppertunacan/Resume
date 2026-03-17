@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>양지웅 - 이력서</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1c1c1c;
+      --ink-soft: #4a4a4a;
+      --ink-muted: #7a7a7a;
+      --accent: #c4654a;
+      --accent-bg: #fdf0ec;
+      --rule: #d4d0cb;
+      --paper: #fafaf7;
+      --surface: #f3f2ee;
+      --white: #ffffff;
+    }
+
+    html { font-size: 10px; }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #e8e6e1;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @media print {
+      html { font-size: 9.5px; }
+      body { background: var(--white); }
+      .page { box-shadow: none; margin: 0; }
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 2rem auto;
+      padding: 19mm 22mm 16mm;
+      background: var(--white);
+      box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 8px 30px rgba(0,0,0,.08);
+    }
+
+    /* ===== Header ===== */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 1.2rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid var(--ink);
+    }
+    .header-left h1 {
+      font-family: 'Libre Baskerville', 'Noto Sans KR', serif;
+      font-size: 3.6rem;
+      font-weight: 700;
+      color: var(--ink);
+      letter-spacing: -.03em;
+      line-height: 1;
+    }
+    .header-left .role {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--ink-soft);
+      margin-top: .5rem;
+      letter-spacing: .02em;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 1.15rem;
+      color: var(--ink-muted);
+      line-height: 1.9;
+    }
+    .header-right a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      border-bottom: 1px solid var(--rule);
+      transition: border-color .2s;
+    }
+    .header-right a:hover { border-color: var(--accent); }
+
+    /* ===== Sections ===== */
+    .section {
+      margin-bottom: 1.6rem;
+      padding-top: 1.1rem;
+      border-top: 1.5px solid var(--rule);
+    }
+    .section:first-child { padding-top: 0; border-top: none; }
+    .section-title {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: .7rem;
+    }
+
+    /* ===== About ===== */
+    .about {
+      font-size: 1.35rem;
+      font-weight: 300;
+      line-height: 1.78;
+      color: var(--ink-soft);
+    }
+    .about strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* ===== Skills ===== */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: .15rem 1.2rem;
+      font-size: 1.25rem;
+    }
+    .skills-grid dt {
+      font-weight: 600;
+      color: var(--ink);
+      padding: .3rem 0;
+      border-bottom: 1px solid transparent;
+    }
+    .skills-grid dd {
+      font-weight: 300;
+      color: var(--ink-soft);
+      padding: .3rem 0;
+      border-bottom: 1px solid var(--surface);
+    }
+
+    /* ===== Projects ===== */
+    .project {
+      margin-bottom: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px dashed var(--surface);
+      page-break-inside: avoid;
+    }
+    .project:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+    .project-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: .2rem;
+    }
+    .project-top h3 {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+    .project-period {
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      font-weight: 400;
+      white-space: nowrap;
+    }
+    .project-sub {
+      font-size: 1.1rem;
+      color: var(--ink-muted);
+      margin-bottom: .3rem;
+    }
+    .project-sub a {
+      color: var(--ink-muted);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--rule);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+      margin-bottom: .4rem;
+    }
+    .tag {
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: .18rem .6rem;
+      background: var(--surface);
+      color: var(--ink-soft);
+      border-radius: 2px;
+      letter-spacing: .01em;
+    }
+
+    .project ul {
+      margin-left: 1.4rem;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--ink);
+    }
+    .project li {
+      margin-bottom: .2rem;
+      line-height: 1.65;
+    }
+    .project li::marker { color: var(--accent); }
+    .project li strong { font-weight: 600; }
+
+    /* ===== Tables (History / Certs) ===== */
+    .clean-table {
+      width: 100%;
+      font-size: 1.25rem;
+      border-collapse: collapse;
+    }
+    .clean-table thead th {
+      font-weight: 600;
+      color: var(--ink-muted);
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      text-align: left;
+      padding: .35rem .5rem;
+      border-bottom: 1.5px solid var(--ink);
+    }
+    .clean-table tbody td {
+      padding: .45rem .5rem;
+      border-bottom: 1px solid var(--surface);
+      color: var(--ink);
+      font-weight: 400;
+    }
+    .clean-table tbody tr:last-child td { border-bottom: none; }
+    .clean-table .muted { color: var(--ink-muted); }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="header">
+    <div class="header-left">
+      <h1>양지웅</h1>
+      <p class="role">IoT &middot; Data Pipeline &middot; Frontend &mdash; End-to-End Developer</p>
+    </div>
+    <div class="header-right">
+      didwldnd0722@gmail.com<br>
+      <a href="https://github.com/Peppertunacan">github.com/Peppertunacan</a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">About</div>
+    <p class="about">
+      데이터 파이프라인부터 IoT 임베디드, 프론트엔드까지 <strong>End-to-End 개발 경험</strong>을 보유한 개발자입니다.
+      Raspberry Pi + RFID 기반 IoT 시스템, Airflow/Kafka 기반 ETL 파이프라인,
+      Next.js/React Native 기반 사용자 인터페이스까지
+      데이터가 수집되어 사용자에게 전달되기까지의 전체 흐름을 이해하고 구현합니다.
+    </p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <dl class="skills-grid">
+      <dt>IoT</dt><dd>Raspberry Pi, MQTT, RFID (YRM1001), I2C, Python</dd>
+      <dt>Data</dt><dd>Apache Airflow, Kafka, Spark, HDFS</dd>
+      <dt>Backend</dt><dd>Django, PostgreSQL, Elasticsearch, Redis</dd>
+      <dt>Frontend</dt><dd>React, Next.js, TypeScript</dd>
+      <dt>Mobile</dt><dd>React Native, Expo</dd>
+      <dt>DevOps</dt><dd>Docker</dd>
+    </dl>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Projects</div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>SOBI &mdash; AIoT 스마트 바스켓</h3>
+        <span class="project-period">2025.07 &ndash; 08 &ensp;|&ensp; 6명 &ensp;|&ensp; PM, IoT Developer</span>
+      </div>
+      <p class="project-sub">
+        <a href="https://github.com/Peppertunacan/smart-online-basket-interface">GitHub</a>
+      </p>
+      <div class="tag-row">
+        <span class="tag">Python</span>
+        <span class="tag">Raspberry Pi</span>
+        <span class="tag">YRM1001 RFID</span>
+        <span class="tag">MQTT</span>
+        <span class="tag">I2C LCD</span>
+      </div>
+      <ul>
+        <li>RFID 멀티리더 시스템 개발 &mdash; RSSI 필터링(-58dBm) + 1사이클 감지로 인식 <strong>6초 &rarr; 2초</strong> 단축</li>
+        <li>Multi-Reader 핫플러깅: USB VID 기반 자동 감지, 설정 자동 적용, 최적 RSSI 선택</li>
+        <li>MQTT 양방향 통신: 백엔드 원격 제어(start/end/total) + 변경 감지 시에만 선택적 발행</li>
+        <li>I2C LCD 실시간 금액 표시, 스레딩 기반 RFID/MQTT 격리 아키텍처</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>AI News Curation &mdash; 뉴스 큐레이션 서비스</h3>
+        <span class="project-period">2025.04 &ndash; 05 &ensp;|&ensp; 2명 &ensp;|&ensp; Backend, Data Engineer</span>
+      </div>
+      <p class="project-sub">
+        <a href="https://github.com/Peppertunacan/news-curation">GitHub</a>
+      </p>
+      <div class="tag-row">
+        <span class="tag">Django 5.1</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Elasticsearch 8.17</span>
+        <span class="tag">Airflow</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">Flink</span>
+        <span class="tag">Spark</span>
+        <span class="tag">HDFS</span>
+      </div>
+      <ul>
+        <li>Airflow DAG 기반 뉴스 수집 / GPT-4o-mini 분류 / 임베딩 파이프라인 자동화</li>
+        <li>Kafka &rarr; Flink 실시간 스트림 + Spark 일일 배치 하이브리드 아키텍처</li>
+        <li>Nori 형태소 분석기 + Edge N-gram + 동적 Fuzziness 기반 한글 검색 최적화</li>
+        <li>pgvector 코사인 유사도 + 좋아요 가중치 기반 개인화 추천 시스템</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>MSKT &mdash; 건설현장 근로자 관리 플랫폼</h3>
+        <span class="project-period">2025.09 &ensp;|&ensp; 5명 &ensp;|&ensp; Mobile Developer, PM</span>
+      </div>
+      <p class="project-sub">
+        <a href="https://github.com/Peppertunacan/mskt">GitHub</a>
+      </p>
+      <div class="tag-row">
+        <span class="tag">React Native 0.81</span>
+        <span class="tag">Expo SDK 54</span>
+        <span class="tag">TypeScript 5.9</span>
+      </div>
+      <ul>
+        <li>WorkStatusContext 기반 6단계 실시간 근무 상태 관리 + 팩토리 함수 UI 자동 전환</li>
+        <li>QR 출퇴근, 전자서명, 생체인증, FCM 푸시 알림 서비스 개발</li>
+        <li>플래그 기반 FCM 토큰 동시성 제어로 Race Condition 해결</li>
+      </ul>
+    </div>
+
+    <div class="project">
+      <div class="project-top">
+        <h3>Agora &mdash; 실시간 뉴스 토픽 분석 플랫폼</h3>
+        <span class="project-period">2025.10 &ndash; 11 &ensp;|&ensp; 4명 &ensp;|&ensp; Frontend Developer</span>
+      </div>
+      <p class="project-sub">
+        <a href="https://github.com/Peppertunacan/agora">GitHub</a>
+      </p>
+      <div class="tag-row">
+        <span class="tag">Next.js 16</span>
+        <span class="tag">React 19</span>
+        <span class="tag">TypeScript</span>
+        <span class="tag">Tailwind CSS 4</span>
+      </div>
+      <ul>
+        <li>페이지별 SSR / ISR / CSR 렌더링 전략 설계 (메인 ISR 60s, 상세 ISR 300s, 댓글 CSR)</li>
+        <li>Custom Fetch Client (타임아웃, 캐싱, 에러 핸들링) + Service Layer Pattern</li>
+        <li>Dynamic Import 코드 스플리팅, React.memo 최적화, SEO 메타데이터 자동 생성</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Education &amp; Career</div>
+    <table class="clean-table">
+      <thead><tr><th style="width:150px;">기간</th><th>기관</th><th>세부 사항</th><th style="width:50px;"></th></tr></thead>
+      <tbody>
+        <tr><td>2019.06 &ndash; 2025.02</td><td>경북대학교</td><td>컴퓨터학부 심화컴퓨터학과</td><td class="muted">졸업</td></tr>
+        <tr><td>2025.01 &ndash; 2025.12</td><td>삼성청년AI&middot;SW아카데미</td><td>데이터트랙</td><td class="muted">수료</td></tr>
+        <tr><td>2025.12 &ndash; 2026.06</td><td>한국수자원공사 (K-water)</td><td>전산직렬 체험형 인턴</td><td class="muted">재직중</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <table class="clean-table">
+      <thead><tr><th style="width:110px;">취득일</th><th>자격증</th><th>발급기관</th></tr></thead>
+      <tbody>
+        <tr><td>2024.06</td><td>정보처리기사</td><td class="muted">한국산업인력공단</td></tr>
+        <tr><td>2025.03</td><td>데이터분석 준전문가 (ADsP)</td><td class="muted">한국데이터산업진흥원</td></tr>
+        <tr><td>2025.07</td><td>빅데이터분석기사</td><td class="muted">한국데이터산업진흥원</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+</body>
+</html>
