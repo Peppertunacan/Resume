@@ -82,9 +82,26 @@
       color: var(--ink-soft);
       text-decoration: none;
       border-bottom: 1px solid var(--rule);
-      transition: border-color .2s;
+      transition: border-color .2s, color .2s;
     }
     .header-right a:hover { border-color: var(--accent); }
+    .header-right .portfolio-link {
+      display: inline-block;
+      margin-top: .3rem;
+      padding: .25rem .75rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      border-bottom: 1.5px solid var(--accent);
+      letter-spacing: .03em;
+      transition: background .2s, color .2s;
+    }
+    .header-right .portfolio-link:hover {
+      background: var(--accent);
+      color: var(--white);
+      border-color: var(--accent);
+    }
 
     /* ===== Sections ===== */
     .section {
@@ -239,7 +256,8 @@
     </div>
     <div class="header-right">
       didwldnd0722@gmail.com<br>
-      <a href="https://github.com/Peppertunacan">github.com/Peppertunacan</a>
+      <a href="https://github.com/Peppertunacan">github.com/Peppertunacan</a><br>
+      <a class="portfolio-link" href="portfolio.html">Portfolio &rarr;</a>
     </div>
   </div>
 
